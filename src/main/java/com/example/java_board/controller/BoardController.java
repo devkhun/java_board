@@ -1,10 +1,15 @@
 package com.example.java_board.controller;
 
+import com.example.java_board.service.BoardService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/board")
 public class BoardController {
+    private final BoardService boardService;
+
     // 게시물 리스트 조회
     @GetMapping("/list")
     public void getList() {
@@ -14,7 +19,7 @@ public class BoardController {
     // 게시물 등록
     @PostMapping("/register")
     public void register() {
-
+        // boardService.createBoard()
     }
 
     // 특정 게시물 조회
