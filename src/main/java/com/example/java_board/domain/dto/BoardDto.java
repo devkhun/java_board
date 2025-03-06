@@ -1,8 +1,8 @@
-package com.example.java_board.domain.model;
+package com.example.java_board.domain.dto;
 
 import java.util.Date;
 
-public class Board {
+public class BoardDto {
     private Integer boardId; // 게시글 ID
     private String boardTitle; // 게시글 제목
     private String boardContent; // 게시글 내용
