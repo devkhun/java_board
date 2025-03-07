@@ -1,10 +1,18 @@
 package com.example.java_board.domain.entity;
 
 import jakarta.persistence.*;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import java.time.LocalDateTime;
 
 @Entity
+@Getter
+@Setter
 @Table(name = "board")
+@NoArgsConstructor
 public class Board {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,4 +42,17 @@ public class Board {
 
     @Column(name = "deleted_at")
     private LocalDateTime deletedAt; // 삭제일
+
+    @Builder
+    public Board(String boardTitle,
+                 String boardContent,
+                 String boardStatus,
+                 String boardWriter,
+                 Integer viewCnt){
+        this.boardTitle = boardTitle;
+        this.boardContent = boardContent;
+        this.boardStatus = boardStatus;
+        this.boardWriter = boardWriter;
+        this.viewCnt = viewCnt;
+    }
 }
