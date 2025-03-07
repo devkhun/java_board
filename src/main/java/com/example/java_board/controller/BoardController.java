@@ -1,5 +1,7 @@
 package com.example.java_board.controller;
 
+import com.example.java_board.domain.dto.BoardDto;
+import com.example.java_board.domain.entity.Board;
 import com.example.java_board.service.BoardService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -18,8 +20,9 @@ public class BoardController {
 
     // 게시물 등록
     @PostMapping("/register")
-    public void register() {
-        // boardService.createBoard()
+    public BoardDto register(@RequestBody BoardDto boardDto) {
+        Board board = boardService.createBoard(boardDto);
+        return new BoardDto(board);
     }
 
     // 특정 게시물 조회
