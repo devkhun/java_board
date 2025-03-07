@@ -19,6 +19,7 @@ public class BoardService {
         board.setBoardContent(boardDto.getBoardContent());
         board.setBoardStatus(boardDto.getBoardStatus());
         board.setBoardWriter(boardDto.getBoardWriter());
+        board.setViewCnt(boardDto.getViewCnt());
 
         return boardRepository.save(board);
     }

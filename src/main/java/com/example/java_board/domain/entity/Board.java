@@ -43,6 +43,11 @@ public class Board {
     @Column(name = "deleted_at")
     private LocalDateTime deletedAt; // 삭제일
 
+    @PostPersist
+    public void onPostPersist() {
+        System.out.println("Board entity has been persisted with ID: " + this.boardId);
+    }
+
     @Builder
     public Board(String boardTitle,
                  String boardContent,

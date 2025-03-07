@@ -2,12 +2,14 @@ package com.example.java_board.domain.dto;
 
 import com.example.java_board.domain.entity.Board;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
 
 @Getter
 @Setter
+@NoArgsConstructor
 public class BoardDto {
     private Integer boardId; // 게시글 ID
     private String boardTitle; // 게시글 제목
